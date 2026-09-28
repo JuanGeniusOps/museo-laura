@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Exposición permanente. Entrada válida para una sola persona.">
+<meta property="og:title" content="Museo Laura">
+<meta property="og:description" content="Exposición permanente. Entrada válida para una sola persona.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#EDEDE8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 28S3 20 3 11.5A6.5 6.5 0 0 1 16 8a6.5 6.5 0 0 1 13 3.5C29 20 16 28 16 28z' fill='%23C9304F'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Museo Laura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;800&family=Bangers&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Comic+Neue:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Jost:ital,wght@0,500;0,600;0,800;1,800&family=Rammetto+One&display=swap">
+<style>
+:root{
+  --wall:#EDEDE8;
+  --wall-deep:#E1E1DB;
+  --ink:#18181B;
+  --muted:#626268;
+  --line:#D2D2CB;
+  --accent:#C9304F;
+  --label:#FAFAF7;
+  --label-ink:#1C1C1F;
+  --frame:#141416;
+  --spot:rgba(255,255,255,.95);
+  --shadow:rgba(24,24,32,.30);
+  --serif:"Bodoni Moda","Bodoni 72",Didot,Georgia,serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --squig:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23111' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M8 14c3-5 7 3 10-2s6 2 8-1'/%3E%3Cpath d='M46 8c3 4 6-3 9 1'/%3E%3Cpath d='M60 34c-2 5 4 6 2 10'/%3E%3Cpath d='M20 44c4-3 6 3 10 0'/%3E%3Cpath d='M44 62c3-4 7 2 10-2s5 3 8 0'/%3E%3Cpath d='M8 70c2-4 5 1 7-2'/%3E%3Cpath d='M70 70c-3 2 0 5-3 7'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --wall:#121214; --wall-deep:#1C1C20; --ink:#EDEDE9; --muted:#9D9DA4; --line:#2B2B31;
+    --accent:#FF5E7E; --label:#1E1E22; --label-ink:#E9E9E5; --frame:#050506;
+    --spot:rgba(255,232,205,.085); --shadow:rgba(0,0,0,.65);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --wall:#121214; --wall-deep:#1C1C20; --ink:#EDEDE9; --muted:#9D9DA4; --line:#2B2B31;
+  --accent:#FF5E7E; --label:#1E1E22; --label-ink:#E9E9E5; --frame:#050506;
+  --spot:rgba(255,232,205,.085); --shadow:rgba(0,0,0,.65);
+}
+html{scroll-behavior:smooth}
+body{background:var(--wall);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;padding-inline:16px;-webkit-font-smoothing:antialiased}
+main{max-width:960px;margin-inline:auto;overflow-x:clip}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+button{font:inherit}
+
+/* ---------- Entrada ---------- */
+.hero{padding-block:24px 72px;display:grid;gap:26px}
+.topline{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:12px}
+.topline b{color:var(--ink);font-weight:800}
+.eyebrow{margin:0;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.title{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(58px,20vw,200px);line-height:.88;letter-spacing:-.02em;white-space:nowrap;cursor:pointer;-webkit-user-select:none;user-select:none}
+.title .l1,.title .l2{display:block}
+.title .l2{font-style:italic;color:var(--accent)}
+.title .ch{display:inline-block}
+.lede{margin:0;max-width:36ch;font-size:clamp(18px,2.3vw,22px);line-height:1.4;text-wrap:pretty}
+.hint{margin:0;font-size:14px;color:var(--muted)}
+.hero-row{display:grid;gap:28px;align-items:start}
+@media (min-width:780px){.hero-row{grid-template-columns:1.05fr 1fr;gap:40px}}
+
+.ticket-wrap{display:grid;gap:14px;justify-items:start}
+.ticket{display:grid;grid-template-columns:minmax(0,1fr) 92px;width:100%;max-width:440px;filter:drop-shadow(0 12px 16px var(--shadow));color:#3B0D1B}
+.t-main{position:relative;background:#F3B5C1;border-radius:6px 0 0 6px;padding:18px 18px 16px 20px;display:grid;gap:10px;
+  -webkit-mask:radial-gradient(circle at 100% 0,#0000 10px,#000 10.5px) top/100% 51% no-repeat,radial-gradient(circle at 100% 100%,#0000 10px,#000 10.5px) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle at 100% 0,#0000 10px,#000 10.5px) top/100% 51% no-repeat,radial-gradient(circle at 100% 100%,#0000 10px,#000 10.5px) bottom/100% 51% no-repeat}
+.t-brand{margin:0;font-family:var(--serif);font-style:italic;font-size:28px;line-height:1}
+.t-kind{margin:0;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+.t-rows{margin:0;display:grid;gap:4px;font-size:14px}
+.t-rows div{display:flex;justify-content:space-between;gap:12px;border-top:1px dashed rgba(59,13,27,.32);padding-top:5px}
+.t-rows dt{opacity:.72}
+.t-rows dd{margin:0;font-weight:700;text-align:right}
+.t-stub{background:#F3B5C1;border-radius:0 6px 6px 0;border-left:2px dashed rgba(59,13,27,.5);padding:16px 8px 14px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:10px;transform-origin:0 0;
+  -webkit-mask:radial-gradient(circle at 0 0,#0000 10px,#000 10.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,#0000 10px,#000 10.5px) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle at 0 0,#0000 10px,#000 10.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,#0000 10px,#000 10.5px) bottom/100% 51% no-repeat}
+.t-admit{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;letter-spacing:.24em;text-transform:uppercase;font-size:12px}
+.t-no{font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;text-align:center;line-height:1.2}
+.barcode{width:60px;height:30px;background:repeating-linear-gradient(90deg,#3B0D1B 0 2px,#0000 2px 3px,#3B0D1B 3px 4px,#0000 4px 7px,#3B0D1B 7px 10px,#0000 10px 11px,#3B0D1B 11px 12px,#0000 12px 15px)}
+.t-stub.torn{animation:tear 1.2s cubic-bezier(.55,0,.85,.35) forwards}
+@keyframes tear{0%{transform:none}18%{transform:rotate(7deg) translate(3px,2px)}100%{transform:translate(60px,420px) rotate(46deg);opacity:0}}
+.stamp{position:absolute;right:14px;top:40%;transform:rotate(-13deg);border:3px solid #A3163A;color:#A3163A;font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:15px;padding:4px 10px;border-radius:4px;opacity:0;pointer-events:none}
+.stamped .stamp{animation:stamp .35s .5s cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes stamp{from{opacity:0;transform:rotate(-13deg) scale(2.2)}to{opacity:.9;transform:rotate(-13deg) scale(1)}}
+
+.btn{font:800 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:14px 18px;background:var(--ink);color:var(--wall);border:0;cursor:pointer}
+.btn:hover{background:var(--accent);color:#fff}
+.btn:disabled{opacity:.35;cursor:not-allowed;background:var(--ink);color:var(--wall)}
+
+.board{background-color:#1D1B1A;background-image:repeating-linear-gradient(180deg,rgba(255,255,255,.04) 0 1px,#0000 1px 7px);border:10px solid #6B472D;border-radius:3px;padding:16px 18px 18px;color:#F2F0EC;box-shadow:inset 0 0 0 1px rgba(0,0,0,.5),0 12px 18px -6px var(--shadow);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.board-h{margin:0 0 10px;font-size:13px;text-align:center;letter-spacing:.3em;opacity:.8}
+.board ol{list-style:none;margin:0;padding:0;display:grid;gap:1px}
+.board a{display:grid;grid-template-columns:2.2ch minmax(0,1fr) auto;gap:12px;color:inherit;text-decoration:none;font-size:14px;padding:4px 2px;font-variant-numeric:tabular-nums}
+.board a:hover,.board a:focus-visible{color:#FFC5D1}
+.board li:nth-child(3n+1) a{transform:rotate(-.35deg)}
+.board li:nth-child(4n+2) a{transform:translateY(1px) rotate(.3deg)}
+.board .yr{opacity:.65}
+
+/* ---------- Salas ---------- */
+.room{padding-block:72px;display:grid;gap:30px;border-top:1px solid var(--line);scroll-margin-top:8px}
+.room-head{display:grid;gap:6px}
+.room-no{margin:0;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.room-head h2{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(38px,7vw,64px);line-height:1;letter-spacing:-.01em;text-wrap:balance}
+.room-meta{margin:0;color:var(--muted);font-size:15px;max-width:60ch}
+.exhibit{display:grid;gap:26px;justify-items:center;isolation:isolate}
+@media (min-width:860px){
+  .exhibit{grid-template-columns:minmax(0,520px) 280px;justify-content:center;align-items:end;gap:56px}
+  .alt .exhibit{grid-template-columns:280px minmax(0,520px)}
+  .alt .label{order:-1}
+}
+.frame{position:relative;margin:0;width:100%;max-width:520px;padding:clamp(7px,1.4vw,12px);background:var(--frame);box-shadow:0 0 0 1px rgba(0,0,0,.25),0 30px 50px -24px var(--shadow),0 10px 20px -12px var(--shadow)}
+.frame::before{content:"";position:absolute;inset:-30% -45% -10%;z-index:-1;background:radial-gradient(ellipse 50% 48% at 50% 34%,var(--spot),#0000 72%);pointer-events:none}
+.art{position:relative;width:100%;aspect-ratio:4/5;container-type:inline-size;overflow:hidden;-webkit-user-select:none;user-select:none}
+.art[data-act]{cursor:pointer}
+.art p,.art h3{margin:0}
+
+.label{width:100%;max-width:520px;background:var(--label);color:var(--label-ink);padding:18px 20px 16px;box-shadow:0 1px 2px rgba(0,0,0,.08),0 8px 16px -10px var(--shadow);font-size:14px;line-height:1.5;display:grid;gap:10px}
+.label p{margin:0}
+.lb-artist{font-weight:800;font-size:15px;line-height:1.3}
+.lb-life{color:var(--muted);font-size:13px;margin-top:-8px!important}
+.lb-title{font-family:var(--serif);font-size:20px;line-height:1.25}
+.lb-medium{font-size:13px;color:var(--muted)}
+.lb-text{font-size:14px;text-wrap:pretty}
+.lb-inv{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;font-variant-numeric:tabular-nums}
+.act{justify-self:start;font:800 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--label-ink);background:transparent;border:1.5px solid currentColor;padding:10px 14px;cursor:pointer}
+.act:hover{background:var(--label-ink);color:var(--label)}
+
+/* Sala 1 · Bauhaus */
+.bh{display:block;width:100%;height:100%}
+.bh-s{transition:transform .9s cubic-bezier(.2,.85,.25,1);transform-box:fill-box;transform-origin:center}
+
+/* Sala 2 · Suizo */
+.sw{background:#F3F2EE;color:#111;font-family:Archivo,"Helvetica Neue",Arial,sans-serif}
+.sw-arcs{position:absolute;inset:0;width:100%;height:100%}
+.sw-kicker{position:absolute;left:7cqw;top:7cqw;font-size:max(10px,2.8cqw);font-weight:500;line-height:1.25}
+.sw-title{position:absolute;left:7cqw;bottom:27cqw;font-weight:800;font-size:17cqw;line-height:.9;letter-spacing:-.05em}
+.sw-title span{display:block;color:#E3000F;font-size:10.4cqw;letter-spacing:-.035em;margin-top:1.4cqw}
+.sw-out{position:absolute;right:1.6cqw;bottom:27.5cqw;writing-mode:vertical-rl;color:#E3000F;font-size:max(10px,2.8cqw);font-weight:500}
+.sw-cols{position:absolute;left:7cqw;right:7cqw;bottom:7cqw;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5cqw;font-size:max(9.5px,2.55cqw);line-height:1.3;border-top:.5cqw solid #111;padding-top:2cqw}
+.sw-cols b{font-weight:800}
+.sw-grid{position:absolute;inset:0 7cqw;display:grid;grid-template-columns:repeat(6,1fr);gap:2.5cqw;opacity:0;transition:opacity .45s;pointer-events:none}
+.sw-grid i{background:rgba(227,0,15,.08);border-inline:1px solid rgba(227,0,15,.4)}
+.sw.show-grid .sw-grid{opacity:1}
+
+/* Sala 3 · Bass */
+.bs{background:#E65A1E;color:#F3E6CF;font-family:Anton,Impact,"Arial Narrow",sans-serif;text-transform:uppercase}
+.bs-svg{position:absolute;inset:0;width:100%;height:100%}
+.bs-heart,.bs-arrow{transform-box:fill-box;transform-origin:center}
+.bs-kick{position:absolute;left:0;right:0;top:6cqw;text-align:center;font-size:max(10px,3.2cqw);letter-spacing:.3em}
+.bs-name{position:absolute;left:0;right:0;top:34.5cqw;text-align:center;font-size:12cqw;line-height:1;letter-spacing:.05em}
+.bs-title{position:absolute;left:0;right:0;bottom:12cqw;text-align:center;font-weight:400;line-height:.92}
+.bs-title .ln{display:block}
+.bs-title .ln:first-child{font-size:14cqw}
+.bs-title .ln:last-child{font-size:21cqw;color:#15110E}
+.bs-ch{display:inline-block;translate:var(--x,0) var(--y,0);rotate:var(--r,0deg)}
+.bs-cred{position:absolute;left:5cqw;right:5cqw;bottom:5cqw;text-align:center;font-family:var(--sans);font-weight:700;font-size:max(9px,2.3cqw);letter-spacing:.22em}
+.bs.play .bs-heart{animation:bsHeart .9s steps(6) .35s both}
+.bs.play .bs-arrow{animation:bsArrow .45s cubic-bezier(.2,.9,.3,1) 1.2s both}
+.bs.play .bs-kick,.bs.play .bs-name,.bs.play .bs-cred{animation:bsBlink .6s steps(3) both}
+.bs.play .bs-kick{animation-delay:.2s}.bs.play .bs-name{animation-delay:1.3s}.bs.play .bs-cred{animation-delay:2.7s}
+.bs.play .bs-ch{animation:bsCh .45s steps(3) both;animation-delay:calc(1.6s + var(--k) * 90ms)}
+.bs.play::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,#15110E 0 5cqw,#0000 5cqw 10cqw);animation:bsBars 1s steps(9) both;pointer-events:none}
+@keyframes bsHeart{from{transform:scale(.05) rotate(-40deg)}to{transform:none}}
+@keyframes bsArrow{from{transform:translate(-60%,45%);opacity:0}to{transform:none;opacity:1}}
+@keyframes bsBlink{from{opacity:0}to{opacity:1}}
+@keyframes bsCh{from{transform:scale(0)}to{transform:none}}
+@keyframes bsBars{0%{transform:translateX(-100%)}45%{transform:none}100%{transform:translateX(100%)}}
+
+/* Sala 4 · Pop */
+.pop{font-family:"Comic Neue","Comic Sans MS",cursive;color:#111;background:#D6E6FA}
+.pop-dots{position:absolute;inset:0;background:radial-gradient(circle,#3F7FDB 0 32%,#0000 35%) 0 0/3.4cqw 3.4cqw,radial-gradient(circle,#3F7FDB 0 32%,#0000 35%) 1.7cqw 1.7cqw/3.4cqw 3.4cqw,#D6E6FA}
+.pop::after{content:"";position:absolute;inset:0;border:1.6cqw solid #111;pointer-events:none;z-index:5}
+.pop-burst{position:absolute;left:50%;top:47%;width:90cqw;aspect-ratio:1;transform:translate(-50%,-50%)}
+.pop-burst i{position:absolute;inset:0}
+.pop-burst .b1{background:#111}
+.pop-burst .b2{background:#E4312B}
+.pop-burst .b3{background:#FFDA1A}
+.pop-word{position:absolute;inset:0;display:grid;place-items:center;font-family:Bangers,Impact,sans-serif;font-size:22cqw;letter-spacing:.02em;color:#E4312B;-webkit-text-stroke:.9cqw #111;paint-order:stroke fill;rotate:-7deg;line-height:1}
+.pop-word.boom{animation:popIn .45s cubic-bezier(.3,1.7,.5,1)}
+@keyframes popIn{0%{transform:scale(.4)}100%{transform:none}}
+.pop-cap{position:absolute;left:4.5cqw;top:4.5cqw;max-width:56cqw;background:#FFF06A;border:.8cqw solid #111;padding:2cqw 2.6cqw;font-weight:700;font-size:max(10px,3.8cqw);line-height:1.15;text-transform:uppercase;z-index:3}
+.pop-bubble{position:absolute;right:5cqw;bottom:6.5cqw;width:62cqw;background:#fff;border:.8cqw solid #111;border-radius:50%;padding:5cqw 6cqw;font-weight:700;font-size:max(10.5px,4.4cqw);line-height:1.1;text-transform:uppercase;text-align:center;z-index:3}
+.pop-bubble::before{content:"";position:absolute;left:14cqw;top:-6.4cqw;width:8cqw;height:7cqw;background:#111;clip-path:polygon(0 0,100% 92%,38% 100%)}
+.pop-bubble::after{content:"";position:absolute;left:15.4cqw;top:-4.2cqw;width:5.6cqw;height:5.2cqw;background:#fff;clip-path:polygon(0 0,100% 92%,38% 100%)}
+
+/* Sala 5 · Memphis */
+.mp{background:#FFB5CC var(--squig) 0 0/16cqw 16cqw}
+.mp-piece{position:absolute;touch-action:none;cursor:grab}
+.mp-piece.drag{cursor:grabbing;filter:drop-shadow(1.2cqw 1.6cqw 0 rgba(0,0,0,.28))}
+.mp-grid{width:24cqw;aspect-ratio:1;background:repeating-linear-gradient(0deg,#111 0 .5cqw,#0000 .5cqw 4cqw),repeating-linear-gradient(90deg,#111 0 .5cqw,#0000 .5cqw 4cqw),#fff;border:.6cqw solid #111;rotate:-8deg}
+.mp-semi{width:34cqw;height:17cqw;background:#23B8B0;border:.7cqw solid #111;border-bottom-width:.7cqw;border-radius:17cqw 17cqw 0 0;background-image:repeating-linear-gradient(90deg,#0000 0 3cqw,rgba(0,0,0,.85) 3cqw 3.6cqw)}
+.mp-dot{width:11cqw;aspect-ratio:1;border-radius:50%;background:#FF4E3A;border:.7cqw solid #111}
+.mp-cyl{width:14cqw;height:26cqw;background:#FFD23F;border:.7cqw solid #111;border-radius:50%/12%}
+.mp-cyl::before{content:"";position:absolute;left:-.7cqw;right:-.7cqw;top:-.7cqw;height:6.2cqw;border:.7cqw solid #111;border-radius:50%;background:#FFE680}
+.mp-squig{width:44cqw;height:14cqw;overflow:visible}
+.mp-tri{width:18cqw;height:16cqw;overflow:visible}
+.mp-zig{width:30cqw;height:8cqw;overflow:visible}
+.mp-pill{background:#fff;border:.6cqw solid #111;border-radius:99px;padding:1.2cqw 3.4cqw;font:800 max(10px,3.6cqw)/1.1 var(--sans);color:#111;rotate:-6deg;white-space:nowrap}
+.mp-title{position:absolute;left:0;right:0;top:29%;text-align:center;font-family:"Rammetto One",Impact,sans-serif;font-weight:400;line-height:.98;pointer-events:none;z-index:40;-webkit-text-stroke:.55cqw #111;paint-order:stroke fill;text-shadow:.9cqw .9cqw 0 #111}
+.mp-title .m1{display:block;font-size:24cqw;color:#FFD23F}
+.mp-title .m2{display:block;font-size:12.5cqw;letter-spacing:-.01em}
+.mp-title .s1{color:#fff}.mp-title .s2{color:#23B8B0}.mp-title .s3{color:#4A5BFF}
+
+/* Sala 6 · Kruger */
+.kr{background:#1a1a1a}
+.kr canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.kr-top{position:absolute;left:6cqw;right:6cqw;top:7cqw}
+.kr-bars{position:absolute;left:6cqw;right:6cqw;bottom:8cqw;display:flex;flex-direction:column;align-items:flex-start;gap:1.6cqw}
+.kr span{display:inline-block;background:#E1251B;color:#fff;font-family:Jost,Futura,"Century Gothic",sans-serif;font-weight:800;font-style:italic;text-transform:uppercase;line-height:1}
+.kr-sm{font-size:max(10.5px,4.3cqw);padding:1.5cqw 2.4cqw 1.7cqw;max-width:88cqw;line-height:1.15!important}
+.kr-lg{font-size:14.5cqw;padding:1.4cqw 2.6cqw 1.8cqw;letter-spacing:-.01em}
+.kr-sm.flash{animation:krFlash .4s steps(2)}
+@keyframes krFlash{from{opacity:0}to{opacity:1}}
+
+/* Sala 7 · GeoCities */
+.gc{background:#C0C0C0;display:flex;flex-direction:column;font-family:"Comic Sans MS","Comic Neue","Chalkboard SE",cursive;cursor:crosshair}
+.gc-bar{display:flex;justify-content:space-between;align-items:center;gap:2cqw;margin:1.2cqw 1.2cqw 0;padding:1.3cqw 1.2cqw 1.3cqw 2cqw;background:linear-gradient(90deg,#000080,#1084D0);color:#fff;font:700 max(9.5px,2.8cqw)/1 Tahoma,Verdana,sans-serif;white-space:nowrap;overflow:hidden}
+.gc-bar span:first-child{overflow:hidden;text-overflow:ellipsis}
+.gc-btns{display:flex;gap:.6cqw;flex:none}
+.gc-btns i{width:3.8cqw;height:3.4cqw;background:#C0C0C0;color:#000;font:700 max(8px,2.3cqw)/1 Tahoma,sans-serif;font-style:normal;display:grid;place-items:center;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff}
+.gc-page{position:relative;flex:1;margin:0 1.2cqw 1.2cqw;border:2px inset #fff;background-color:#00002E;background-image:radial-gradient(circle,#fff 0 .22cqw,#0000 .3cqw),radial-gradient(circle,#FFE98A 0 .18cqw,#0000 .26cqw),radial-gradient(circle,#9ADFFF 0 .16cqw,#0000 .22cqw);background-size:9cqw 9cqw,13cqw 13cqw,7cqw 11cqw;background-position:0 0,4cqw 6cqw,2cqw 3cqw;color:#fff;padding:3cqw 3cqw 2.4cqw;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;overflow:hidden}
+.gc-welcome{font-weight:700;font-size:5cqw;line-height:1.1;background:linear-gradient(90deg,#f33,#f90,#ff0,#3f3,#0ff,#39f,#f3f,#f33);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:rainbow 2.5s linear infinite}
+@keyframes rainbow{to{background-position:-200% 0}}
+.gc-marq{width:100%;overflow:hidden;border-block:1px dashed #6f6fff;padding-block:.8cqw;color:#FFFF00;font-size:max(10px,3.3cqw);white-space:nowrap}
+.gc-marq span{display:inline-block;padding-left:100%;animation:marq 13s linear infinite}
+@keyframes marq{to{transform:translateX(-100%)}}
+.gc-word{font-family:Anton,Impact,sans-serif;font-size:13.5cqw;line-height:1;letter-spacing:.01em;background:linear-gradient(180deg,#FFF36B 0%,#FF9B21 38%,#FF2E7E 62%,#8B2BFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent;transform:perspective(60cqw) rotateX(22deg) skewX(-9deg);filter:drop-shadow(.7cqw .7cqw 0 #1E90FF) drop-shadow(.5cqw .5cqw 0 #000);padding-inline:2cqw}
+.gc-uc{background:repeating-linear-gradient(-45deg,#FFD400 0 2.2cqw,#111 2.2cqw 4.4cqw);padding:1cqw}
+.gc-uc span{display:block;background:#111;color:#FFD400;font:700 max(9.5px,2.9cqw)/1.2 Verdana,sans-serif;padding:.8cqw 2cqw;text-transform:uppercase}
+.gc-count{font-size:max(10px,3.3cqw)}
+.odo{display:inline-flex;gap:.3cqw;vertical-align:middle;margin-left:1cqw}
+.odo i{font:700 max(10px,3.4cqw)/1 var(--mono);font-style:normal;background:#000;color:#39FF14;padding:.5cqw .6cqw;border:1px solid #555}
+.gc-only{display:block;font-size:max(9.5px,2.8cqw);color:#FF8AD8}
+.gc-row{display:flex;align-items:center;gap:2.4cqw}
+.gc-btn{background:#C0C0C0;color:#000;font:700 max(11px,3.3cqw)/1 Tahoma,Verdana,sans-serif;padding:1.6cqw 3cqw;border:0;cursor:pointer;box-shadow:inset -2px -2px #0a0a0a,inset 2px 2px #fff,inset -3px -3px #808080,inset 3px 3px #dfdfdf}
+.gc-btn:active{box-shadow:inset 2px 2px #0a0a0a,inset -2px -2px #fff,inset 3px 3px #808080}
+.gc-new{color:#FF2B2B;font-weight:700;font-size:max(10px,3cqw);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{visibility:hidden}}
+.gc-ring{font-size:max(9.5px,2.8cqw);color:#fff}
+.gc-ring u{color:#00FFFF}
+.gc-foot{font-size:max(8.5px,2.3cqw);color:#9a9ab8}
+.gc-heart{position:absolute;top:-12%;pointer-events:none;animation:fall linear forwards;line-height:1}
+@keyframes fall{to{transform:translateY(135cqw) rotate(200deg)}}
+.gc-spark{position:absolute;pointer-events:none;font-size:max(12px,3.6cqw);line-height:1;translate:-50% -50%;animation:spark .8s ease-out forwards}
+@keyframes spark{to{transform:translateY(5cqw) scale(.2);opacity:0}}
+
+/* Sala 8 · Presentación */
+.kn{background:radial-gradient(120% 70% at 50% 0%,#202027 0%,#000 62%);color:#F5F5F7;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Hanken Grotesk",sans-serif;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:5.5cqw;padding:8cqw 7cqw}
+.kn-pre{color:#8A8A90;font-size:max(12px,4.6cqw);font-weight:600;letter-spacing:-.01em}
+.kn-main{font-size:13.4cqw;font-weight:700;letter-spacing:-.045em;line-height:1.05;background:linear-gradient(90deg,#FF6B9A 0%,#FFA36B 38%,#B48CFF 72%,#6FB6FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 1cqw .1em}
+.kn-specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3cqw;width:100%;border-top:1px solid #2C2C31;padding-top:5.5cqw}
+.kn-specs b{display:block;font-size:9cqw;font-weight:700;letter-spacing:-.03em;line-height:1}
+.kn-specs span{display:block;color:#A1A1A6;font-size:max(10px,2.9cqw);line-height:1.25;margin-top:1.4cqw}
+.kn-foot{color:#8A8A90;font-size:max(10px,3cqw)}
+.kn.play .kn-pre{animation:knFade 1s .2s both}
+.kn.play .kn-main{animation:knReveal 1.5s cubic-bezier(.2,.8,.2,1) 1.4s both}
+.kn.play .kn-specs{animation:knFade .6s 2.7s both}
+.kn.play .kn-specs div{animation:knFade .8s both;animation-delay:calc(2.9s + var(--k) * .3s)}
+.kn.play .kn-foot{animation:knFade .8s 4s both}
+@keyframes knFade{from{opacity:0;transform:translateY(2cqw)}to{opacity:1;transform:none}}
+@keyframes knReveal{from{opacity:0;filter:blur(3cqw);transform:scale(.94)}to{opacity:1;filter:none;transform:none}}
+
+/* Sala 9 · Color del año */
+.cd{background:linear-gradient(180deg,#EFEDE9,#DEDBD5);color:#1A1A1A;font-family:var(--sans)}
+.cd-head{position:absolute;left:7cqw;right:7cqw;top:7cqw;display:grid;gap:1.4cqw}
+.cd-kick{font-size:max(10px,2.7cqw);letter-spacing:.2em;text-transform:uppercase;font-weight:800}
+.cd-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:11cqw;line-height:1}
+.fan{position:absolute;left:50%;bottom:9cqw;width:0;height:0}
+.chip{position:absolute;left:-12cqw;bottom:-4cqw;width:24cqw;height:72cqw;background:#fff;border-radius:.9cqw;overflow:hidden;display:flex;flex-direction:column;transform-origin:50% calc(100% - 4cqw);transform:rotate(calc((var(--i) - 3) * 10deg));transition:transform .9s cubic-bezier(.2,.9,.2,1),translate .3s;box-shadow:0 .5cqw 1.6cqw rgba(0,0,0,.2),0 0 0 1px rgba(0,0,0,.06)}
+.chip .nm{padding:1.8cqw 1.8cqw 1.6cqw;display:grid;gap:.5cqw}
+.chip b{font-size:max(8.5px,2.5cqw);font-weight:800;line-height:1.1;color:#141414}
+.chip small{font-size:max(7.5px,1.9cqw);color:#6a6a6a;font-variant-numeric:tabular-nums;line-height:1.1}
+.chip .sw{flex:1;background:var(--c)}
+.chip.laura b{font-size:max(10px,3.4cqw);letter-spacing:.06em}
+.fan.closed .chip{transform:rotate(0deg)}
+@media (hover:hover){.fan:not(.closed) .chip:hover{translate:0 -2.5cqw}}
+.rivet{position:absolute;left:-1.7cqw;bottom:-1.7cqw;width:3.4cqw;height:3.4cqw;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f4f4f4,#8c8c8c 60%,#4a4a4a);z-index:20;box-shadow:0 .3cqw .6cqw rgba(0,0,0,.35)}
+
+/* ---------- Tienda ---------- */
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px}
+@media (min-width:780px){.products{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}}
+.prod{display:grid;gap:8px;align-content:start}
+.prod h3{margin:4px 0 0;font-size:16px;line-height:1.25;font-weight:800}
+.prod p{margin:0}
+.prod-desc{font-size:13.5px;color:var(--muted);line-height:1.45}
+.price{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+.add{font:800 11px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:11px 10px;background:transparent;color:var(--ink);border:1.5px solid var(--ink);cursor:pointer}
+.add[aria-pressed="true"]{background:var(--ink);color:var(--wall)}
+.add:disabled{opacity:.4;cursor:not-allowed;border-style:dashed}
+.prod-img{aspect-ratio:1;background:var(--wall-deep);position:relative;overflow:hidden;display:grid;place-items:center;container-type:inline-size}
+.pp{position:relative;width:46cqw;aspect-ratio:4/5;background:#EBE3D2;border:1.6cqw solid #141416;box-shadow:0 3cqw 5cqw -3cqw rgba(0,0,0,.45)}
+.pp i{position:absolute}
+.pp i:nth-child(1){left:9%;top:9%;width:36%;aspect-ratio:1;background:#1F4E9E}
+.pp i:nth-child(2){right:6%;top:13%;width:50%;aspect-ratio:1;border-radius:50%;background:#D7261E}
+.pp i:nth-child(3){left:24%;top:43%;width:30%;aspect-ratio:1;background:#F2C12E;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.pp b{position:absolute;left:9%;bottom:10%;font:600 4.4cqw/1 Jost,sans-serif;color:#141414}
+.mug{position:relative;width:38cqw;height:40cqw;margin-right:10cqw;background:#FFB5CC var(--squig) 0 0/14cqw 14cqw;border:1.2cqw solid #111;border-radius:0 0 7cqw 7cqw}
+.mug::after{content:"";position:absolute;right:-13cqw;top:7cqw;width:11cqw;height:18cqw;border:1.2cqw solid #111;border-left:0;border-radius:0 9cqw 9cqw 0;background:#FFB5CC}
+.cup-wrap{position:relative;width:60cqw;height:52cqw}
+.cup{position:absolute;left:12cqw;top:18cqw;width:34cqw;height:24cqw;background:#fff;border:1.2cqw solid #111;border-radius:0 0 17cqw 17cqw}
+.cup::before{content:"";position:absolute;left:1cqw;right:1cqw;top:1cqw;height:3cqw;border-radius:50%;background:#6B3B22}
+.cup::after{content:"";position:absolute;right:-9cqw;top:3cqw;width:8cqw;height:10cqw;border:1.2cqw solid #111;border-left:0;border-radius:0 6cqw 6cqw 0}
+.saucer{position:absolute;left:3cqw;right:5cqw;bottom:4cqw;height:4.6cqw;background:#fff;border:1.2cqw solid #111;border-radius:50%}
+.steam{position:absolute;top:0;width:3cqw;height:14cqw;border-left:1cqw solid var(--muted);border-radius:50%;opacity:.7;animation:steam 2.4s ease-in-out infinite}
+.steam:nth-child(1){left:20cqw}.steam:nth-child(2){left:28cqw;animation-delay:.8s}.steam:nth-child(3){left:36cqw;animation-delay:1.6s}
+@keyframes steam{0%,100%{transform:translateY(2cqw) scaleY(.8);opacity:0}50%{transform:translateY(-1cqw);opacity:.7}}
+.sold{width:50cqw;aspect-ratio:1;border:1cqw dashed var(--muted);display:grid;place-items:center}
+.sold span{transform:rotate(-14deg);border:1cqw solid var(--accent);color:var(--accent);font:800 8cqw/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:2cqw 4cqw;border-radius:2cqw}
+
+.cart{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;border-block:1px solid var(--line);padding-block:14px}
+.cart p{margin:0;font-weight:600}
+.receipt-slot{display:grid;justify-items:center}
+.receipt{width:min(100%,330px);background:#FCFCFA;color:#1B1B1B;font:13px/1.5 var(--mono);padding:22px 20px 36px;box-shadow:0 14px 26px -12px var(--shadow);
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/18px 9px repeat-x;
+  mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/18px 9px repeat-x}
+.receipt.printing{animation:print 1.8s steps(18) both}
+@keyframes print{from{clip-path:inset(0 0 100% 0);transform:translateY(-24px)}to{clip-path:inset(0 0 0 0);transform:none}}
+.receipt p{margin:0}
+.rc-c{text-align:center}
+.rc-hr{border:0;border-top:1.5px dashed #999;margin:12px 0}
+.rc-row{display:flex;justify-content:space-between;gap:12px}
+.rc-total{font-weight:800;font-size:15px}
+.rc-note{margin-block:4px!important}
+.rc-bar{height:44px;margin:14px auto 10px;width:80%;background:repeating-linear-gradient(90deg,#111 0 2px,#0000 2px 4px,#111 4px 5px,#0000 5px 8px,#111 8px 11px,#0000 11px 12px,#111 12px 13px,#0000 13px 17px)}
+
+.foot{border-top:1px solid var(--line);padding-block:48px 64px;display:grid;gap:10px;color:var(--muted);font-size:14px}
+.foot p{margin:0;max-width:60ch}
+.foot .sign{font-family:var(--serif);font-style:italic;font-size:clamp(28px,5vw,40px);color:var(--ink);line-height:1.1}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .gc-marq span{animation:none!important;padding-left:0}
+  .gc-welcome,.gc-new,.steam{animation:none!important}
+}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="topline"><b>Museo Laura</b><span>Abierto todos los días · 24 horas</span></div>
+    <p class="eyebrow">Exposición permanente</p>
+    <h1 class="title" id="title" aria-label="Me encantas."><span class="l1" aria-hidden="true">Me</span><span class="l2" aria-hidden="true">encantas.</span></h1>
+    <p class="lede">Nueve salas y casi cien años de historia del diseño, reunidos para decir una sola cosa. Pasa, Laura: la entrada es tuya.</p>
+    <p class="hint">Toca las obras: casi todas hacen algo. El título también.</p>
+
+    <div class="hero-row">
+      <div class="ticket-wrap">
+        <div class="ticket" aria-label="Entrada al museo">
+          <div class="t-main" id="tMain">
+            <p class="t-brand">Museo Laura</p>
+            <p class="t-kind">Entrada general</p>
+            <dl class="t-rows">
+              <div><dt>Válida para</dt><dd>Laura</dd></div>
+              <div><dt>Precio</dt><dd>Una sonrisa</dd></div>
+              <div><dt>Caduca</dt><dd>Nunca</dd></div>
+            </dl>
+            <span class="stamp">Validada</span>
+          </div>
+          <div class="t-stub" id="stub">
+            <span class="t-admit">Admite 1</span>
+            <span class="t-no">Nº<br>000001</span>
+            <span class="barcode" aria-hidden="true"></span>
+          </div>
+        </div>
+        <button class="btn" id="tear">Cortar la entrada y pasar</button>
+      </div>
+
+      <nav class="board" aria-label="Directorio de salas">
+        <p class="board-h">Directorio</p>
+        <ol>
+          <li><a href="#sala-1"><span>1</span><span>Bauhaus</span><span class="yr">1925</span></a></li>
+          <li><a href="#sala-2"><span>2</span><span>Estilo suizo</span><span class="yr">1955</span></a></li>
+          <li><a href="#sala-3"><span>3</span><span>Títulos de crédito</span><span class="yr">1959</span></a></li>
+          <li><a href="#sala-4"><span>4</span><span>Arte pop</span><span class="yr">1963</span></a></li>
+          <li><a href="#sala-5"><span>5</span><span>Memphis</span><span class="yr">1981</span></a></li>
+          <li><a href="#sala-6"><span>6</span><span>Arte conceptual</span><span class="yr">1987</span></a></li>
+          <li><a href="#sala-7"><span>7</span><span>Web 1.0</span><span class="yr">1998</span></a></li>
+          <li><a href="#sala-8"><span>8</span><span>La presentación</span><span class="yr">2007</span></a></li>
+          <li><a href="#sala-9"><span>9</span><span>Color del año</span><span class="yr">2026</span></a></li>
+          <li><a href="#tienda"><span>→</span><span>Tienda y salida</span><span class="yr"></span></a></li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sala 1 -->
+  <section class="room" id="sala-1">
+    <header class="room-head">
+      <p class="room-no">Sala 1</p>
+      <h2>Bauhaus</h2>
+      <p class="room-meta">Weimar · Dessau · Berlín, 1919–1933</p>
+    </header>
+    <div class="exhibit">
+      <figure class="frame">
+        <div class="art" data-act="bauhaus">
+          <svg class="bh" viewBox="0 0 480 600" role="img" aria-label="Composición Bauhaus: un cuadrado azul, un círculo rojo y un triángulo amarillo sobre las palabras me encantas y el nombre laura construido con formas geométricas">
+            <rect width="480" height="600" fill="#EBE3D2"/>
+            <g class="bh-s"><line x1="20" y1="330" x2="428" y2="234" stroke="#141414" stroke-width="5"/></g>
+            <g class="bh-s"><circle cx="305" cy="188" r="122" fill="#D7261E"/></g>
+            <g class="bh-s"><rect x="48" y="64" width="150" height="150" fill="#1F4E9E"/></g>
+            <g class="bh-s"><polygon points="112,336 252,336 182,212" fill="#F2C12E"/></g>
+            <g class="bh-s"><circle cx="400" cy="330" r="13" fill="#141414"/></g>
+            <text x="448" y="64" transform="rotate(90 448 64)" font-family="Jost, Futura, sans-serif" font-size="12" font-weight="500" letter-spacing="3" fill="#141414">exposición laura · dessau · 1925</text>
+            <text x="46" y="414" font-family="Jost, Futura, sans-serif" font-size="62" font-weight="600" letter-spacing="-1.5" fill="#141414">me encantas</text>
+            <g>
+              <rect x="48" y="432" width="20" height="130" fill="#141414"/>
+              <circle cx="122" cy="522" r="30" fill="none" stroke="#D7261E" stroke-width="20"/>
+              <rect x="142" y="482" width="20" height="80" fill="#D7261E"/>
+              <path d="M186 482V522A30 30 0 0 0 246 522V482" fill="none" stroke="#1F4E9E" stroke-width="20"/>
+              <rect x="236" y="482" width="20" height="80" fill="#1F4E9E"/>
+              <rect x="270" y="482" width="20" height="80" fill="#141414"/>
+              <path d="M280 530V522A30 30 0 0 1 310 492H326" fill="none" stroke="#141414" stroke-width="20"/>
+              <circle cx="376" cy="522" r="40" fill="#F2C12E"/>
+              <rect x="396" y="482" width="20" height="80" fill="#141414"/>
+            </g>
+          </svg>
+        </div>
+      </figure>
+      <aside class="label">
+        <p class="lb-artist">A la manera de Herbert Bayer</p>
+        <p class="lb-life">Austria, 1900 – Estados Unidos, 1985</p>
+        <p class="lb-title"><i>me encantas</i>, 1925</p>
+        <p class="lb-medium">Círculo, cuadrado y triángulo sobre papel. Dimensiones variables, como mis nervios.</p>
+        <p class="lb-text">Bayer quería eliminar las mayúsculas: decía que nadie habla en mayúsculas. Por eso esto va en minúsculas, casi en voz baja. En la misma escuela, Kandinsky le dio un color a cada forma: triángulo amarillo, cuadrado rojo, círculo azul. Aquí dos están cambiados. Desde que te conozco, nada está del todo en su sitio.</p>
+        <button class="act" data-act="bauhaus">Recomponer</button>
+        <p class="lb-inv">Inv. L-001 · Préstamo permanente de mi corazón</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Sala 2 -->
+  <section class="room alt" id="sala-2">
+    <header class="room-head">
+      <p class="room-no">Sala 2</p>
+      <h2>Estilo tipográfico internacional</h2>
+      <p class="room-meta">Zúrich · Basilea, 1950–1970</p>
+    </header>
+    <div class="exhibit">
+      <figure class="frame">
+        <div class="art sw" id="swArt" data-act="swiss" role="img" aria-label="Cartel suizo: arcos negros concéntricos y el texto laura, me encantas">
+          <svg class="sw-arcs" viewBox="0 0 400 500" aria-hidden="true"><g id="swArcs" fill="none" stroke="#111"></g></svg>
+          <div class="sw-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="sw-kicker">Museo Laura<br>presenta</p>
+          <h3 class="sw-title">laura<span>me encantas</span></h3>
+          <span class="sw-out">(muchísimo)</span>
+          <div class="sw-cols">
+            <p><b>Cuándo</b><br>Lunes a domingo, 0.00–24.00 h</p>
+            <p><b>Dónde</b><br>En mi cabeza, sala única</p>
+            <p><b>Entrada</b><br>Libre, solo para Laura</p>
+          </div>
+        </div>
+      </figure>
+      <aside class="label">
+        <p class="lb-artist">A la manera de Josef Müller-Brockmann</p>
+        <p class="lb-life">Suiza, 1914–1996</p>
+        <p class="lb-title"><i>laura, me encantas</i>, 1955</p>
+        <p class="lb-medium">Tinta negra y roja sobre retícula de seis columnas.</p>
+        <p class="lb-text">Müller-Brockmann organizaba cada cartel sobre una retícula: todo tiene su columna y su medida. Sus arcos para los conciertos de Beethoven se leen casi como música. Aquí todo respeta la cuadrícula menos una palabra, que no cupo.</p>
+        <button class="act" data-act="swiss">Mostrar retícula</button>
+        <p class="lb-inv">Inv. L-002 · Préstamo permanente de mi corazón</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Sala 3 -->
+  <section class="room" id="sala-3">
+    <header class="room-head">
+      <p class="room-no">Sala 3</p>
+      <h2>Títulos de crédito</h2>
+      <p class="room-meta">Hollywood, 1955–1995</p>
+    </header>
+    <div class="exhibit">
+      <figure class="frame">
+        <div class="art bs" id="bsArt" data-act="bass" role="img" aria-label="Títulos de crédito recortados en papel: un corazón negro atravesado por una flecha, y el texto Una película sobre Laura. Me encantas">
+          <svg class="bs-svg" viewBox="0 0 400 500" aria-hidden="true">
+            <g class="bs-arrow">
+              <line x1="34" y1="304" x2="360" y2="80" stroke="#F3E6CF" stroke-width="7"/>
+              <polygon points="374,71 363,89 353,74" fill="#F3E6CF"/>
+              <polygon points="34,304 26,290 44,296" fill="#F3E6CF"/>
+              <polygon points="34,304 48,312 42,296" fill="#F3E6CF"/>
+            </g>
+            <polygon class="bs-heart" id="bsHeart" fill="#15110E"/>
+          </svg>
+          <p class="bs-kick">Una película sobre</p>
+          <p class="bs-name" id="bsName">Laura</p>
+          <h3 class="bs-title" id="bsTitle"><span class="ln">Me</span><span class="ln">encantas</span></h3>
+          <p class="bs-cred">Con tu risa · mis nervios · un café pendiente</p>
+        </div>
+      </figure>
+      <aside class="label">
+        <p class="lb-artist">A la manera de Saul Bass</p>
+        <p class="lb-life">Estados Unidos, 1920–1996</p>
+        <p class="lb-title"><i>Me encantas</i>, 1959</p>
+        <p class="lb-medium">Papel recortado a tijera. Duración: tres segundos.</p>
+        <p class="lb-text">Bass convirtió los créditos iniciales de las películas en pequeñas obras: formas recortadas a mano, dos o tres colores y letras que tiemblan. Aquí el reparto es corto: tú, y una flecha que no falló.</p>
+        <button class="act" data-act="bass">Ver los créditos</button>
+        <p class="lb-inv">Inv. L-003 · Préstamo permanente de mi corazón</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Sala 4 -->
+  <section class="room alt" id="sala-4">
+    <header class="room-head">
+      <p class="room-no">Sala 4</p>
+      <h2>Arte pop</h2>
+      <p class="room-meta">Nueva York, 1958–1970</p>
+    </header>
+    <div class="exhibit">
+      <figure class="frame">
+        <div class="art pop" data-act="pop" role="img" aria-label="Viñeta de cómic con una explosión que dice ¡PUM! y un globo que dice: Oh, Laura... me encantas. Sin peros.">
+          <div class="pop-dots"></div>
+          <div class="pop-burst" aria-hidden="true">
+            <i class="b1" id="popB1"></i><i class="b2" id="popB2"></i><i class="b3" id="popB3"></i>
+            <span class="pop-word" id="popWord">¡PUM!</span>
+          </div>
+          <p class="pop-cap">Y entonces, al verte, lo supe…</p>
+          <p class="pop-bubble">¡Oh, Laura…! Me encantas. Sin peros.</p>
+        </div>
+      </figure>
+      <aside class="label">
+        <p class="lb-artist">A la manera de Roy Lichtenstein</p>
+        <p class="lb-life">Estados Unidos, 1923–1997</p>
+        <p class="lb-title"><i>¡Pum!</i>, 1963</p>
+        <p class="lb-medium">Puntos Ben-Day y tinta de imprenta, ampliados a mano.</p>
+        <p class="lb-text">Lichtenstein tomaba una viñeta de cómic, la ampliaba y pintaba a mano cada punto de la trama. Siempre elegía el instante más dramático. Este es el mío: el momento exacto en que me di cuenta.</p>
+        <button class="act" data-act="pop">Otra onomatopeya</button>
+        <p class="lb-inv">Inv. L-004 · Préstamo permanente de mi corazón</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Sala 5 -->
+  <section class="room" id="sala-5">
+    <header class="room-head">
+      <p class="room-no">Sala 5</p>
+      <h2>Grupo Memphis</h2>
+      <p class="room-meta">Milán, 1981–1987</p>
+    </header>
+    <div class="exhibit">
+      <figure class="frame">
+        <div class="art mp" id="mpArt" role="img" aria-label="Composición Memphis en rosa con piezas geométricas de colores que se pueden arrastrar, y el texto me encantas, para Laura">
+          <div class="mp-piece mp-grid" style="left:6%;top:5%"></div>
+          <div class="mp-piece mp-dot" style="left:41%;top:8%"></div>
+          <div class="mp-piece mp-semi" style="left:59%;top:9%"></div>
+          <div class="mp-piece mp-cyl" style="left:7%;top:67%"></div>
+          <svg class="mp-piece mp-squig" style="left:44%;top:71%" viewBox="0 0 132 42"><path d="M6 21q15-19 30 0t30 0t30 0t30 0" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round"/></svg>
+          <svg class="mp-piece mp-tri" style="left:73%;top:80%" viewBox="0 0 54 48"><polygon points="27,3 51,45 3,45" fill="#4A5BFF" stroke="#111" stroke-width="3" stroke-linejoin="round"/></svg>
+          <svg class="mp-piece mp-zig" style="left:27%;top:88%" viewBox="0 0 90 24"><polyline points="3,20 14,4 25,20 36,4 47,20 58,4 69,20 80,4 88,16" fill="none" stroke="#23B8B0" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><polyline points="3,20 14,4 25,20 36,4 47,20 58,4 69,20 80,4 88,16" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" transform="translate(1.5 1.5)" opacity=".7"/></svg>
+          <span class="mp-piece mp-pill" style="left:34%;top:61%">para Laura</span>
+          <h3 class="mp-title"><span class="m1">me</span><span class="m2"><span class="s1">en</span><span class="s2">can</span><span class="s3">tas</span></span></h3>
+        </div>
+      </figure>
+      <aside class="label">
+        <p class="lb-artist">A la manera de Ettore Sottsass y el Grupo Memphis</p>
+        <p class="lb-life">Austria, 1917 – Italia, 2007</p>
+        <p class="lb-title"><i>me en-can-tas</i>, 1981</p>
+        <p class="lb-medium">Laminado plástico, madera lacada y demasiada alegría.</p>
+        <p class="lb-text">En 1981 un grupo de diseñadores de Milán decidió que los muebles podían ser ruidosos, rosados y un poco absurdos. Las piezas de esta obra se mueven: arrástralas y decora a tu gusto. El título no se mueve, eso sí.</p>
+        <button class="act" data-act="memphis">Volver a ordenar</button>
+        <p class="lb-inv">Inv. L-005 · Préstamo permanente de mi corazón</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Sala 6 -->
+  <section class="room alt" id="sala-6">
+    <header class="room-head">
+      <p class="room-no">Sala 6</p>
+      <h2>Arte conceptual</h2>
+      <p class="room-meta">Nueva York, década de 1980</p>
+    </header>
+    <div class="exhibit">
+      <figure class="frame">
+        <div class="art kr" data-act="kruger" role="img" aria-label="Fotografía en blanco y negro de luces desenfocadas con letras blancas sobre franjas rojas: Te pienso, luego existo. Me encantas.">
+          <canvas id="krCanvas" aria-hidden="true"></canvas>
+          <div class="kr-top"><span class="kr-sm" id="krPhrase">Te pienso, luego existo</span></div>
+          <div class="kr-bars"><span class="kr-lg">Me</span><span class="kr-lg">encantas</span></div>
+        </div>
+      </figure>
+      <aside class="label">
+        <p class="lb-artist">A la manera de Barbara Kruger</p>
+        <p class="lb-life">Estados Unidos, 1945</p>
+        <p class="lb-title"><i>Sin título (Te pienso, luego existo)</i>, 1987</p>
+        <p class="lb-medium">Fotografía en blanco y negro y letras blancas sobre rojo.</p>
+        <p class="lb-text">Kruger pega frases cortas, en letra blanca sobre franjas rojas, encima de fotos en blanco y negro. Suenan a eslogan y obligan a pensar. Esta también suena a eslogan. La diferencia es que es verdad.</p>
+        <button class="act" data-act="kruger">Otra frase</button>
+        <p class="lb-inv">Inv. L-006 · Préstamo permanente de mi corazón</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Sala 7 -->
+  <section class="room" id="sala-7">
+    <header class="room-head">
+      <p class="room-no">Sala 7</p>
+      <h2>Web 1.0</h2>
+      <p class="room-meta">Internet a 56 kbps, 1995–2001</p>
+    </header>
+    <div class="exhibit">
+      <figure class="frame">
+        <div class="art gc" role="img" aria-label="Página web de los años noventa: la página de Laura, con texto en movimiento, contador de visitas y el letrero me encantas">
+          <div class="gc-bar"><span>La página de LAURA!!! – Navegador</span><span class="gc-btns" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+          <div class="gc-page" id="gcPage">
+            <p class="gc-welcome">¡¡¡BiEnVeNiDa A mI pÁgInA!!!</p>
+            <div class="gc-marq"><span>*~*~ LAURA ME ENCANTA ~*~* esta página está dedicada a ella ~*~* ¡¡gracias x venir!! ~*~* no te vayas todavía ~*~*</span></div>
+            <p class="gc-word">ME ENCANTAS</p>
+            <div class="gc-uc"><span>En construcción · como mis nervios</span></div>
+            <p class="gc-count">Eres la visitante nº<span class="odo" aria-hidden="true"><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>1</i></span><span class="gc-only">(y la única)</span></p>
+            <div class="gc-row"><button class="gc-btn" data-act="geo">¡¡Haz clic aquí!!</button><span class="gc-new">¡NUEVO!</span></div>
+            <p class="gc-ring">« <u>anterior</u> | Webring de corazones | <u>siguiente</u> »</p>
+            <p class="gc-foot">Mejor visto a 800×600 · Actualizada: hoy</p>
+          </div>
+        </div>
+      </figure>
+      <aside class="label">
+        <p class="lb-artist">Autor anónimo de GeoCities</p>
+        <p class="lb-life">Internet, 1994–2009</p>
+        <p class="lb-title"><i>La página de LAURA!!!</i>, 1998</p>
+        <p class="lb-medium">HTML, GIF animados y una tipografía que todos los diseñadores odian.</p>
+        <p class="lb-text">En los noventa cualquiera podía tener una página web, y casi todas eran así: contador de visitas, texto que se mueve y un letrero de «en construcción». Eran horribles y muy sinceras. Pasa el dedo o el ratón por encima.</p>
+        <button class="act" data-act="geo">Llover corazones</button>
+        <p class="lb-inv">Inv. L-007 · Préstamo permanente de mi corazón</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Sala 8 -->
+  <section class="room alt" id="sala-8">
+    <header class="room-head">
+      <p class="room-no">Sala 8</p>
+      <h2>La presentación</h2>
+      <p class="room-meta">California, 2007</p>
+    </header>
+    <div class="exhibit">
+      <figure class="frame">
+        <div class="art kn" id="knArt" data-act="keynote">
+          <p class="kn-pre">Una cosa más.</p>
+          <p class="kn-main">Me encantas.</p>
+          <div class="kn-specs">
+            <div style="--k:0"><b>∞</b><span>horas pensando en ti</span></div>
+            <div style="--k:1"><b>0</b><span>formas de disimularlo</span></div>
+            <div style="--k:2"><b>1</b><span>Laura</span></div>
+          </div>
+          <p class="kn-foot">Disponible ya. Solo para ti.</p>
+        </div>
+      </figure>
+      <aside class="label">
+        <p class="lb-artist">A la manera de las presentaciones de producto</p>
+        <p class="lb-life">Escenario negro, un solo foco</p>
+        <p class="lb-title"><i>Una cosa más</i>, 2007</p>
+        <p class="lb-medium">Pantalla gigante, silencio y aplausos.</p>
+        <p class="lb-text">Durante años, las grandes presentaciones de tecnología guardaban la sorpresa para el final con la misma frase: «una cosa más». Aquí no hay ningún producto. Solo esa cosa más.</p>
+        <button class="act" data-act="keynote">Reproducir</button>
+        <p class="lb-inv">Inv. L-008 · Préstamo permanente de mi corazón</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Sala 9 -->
+  <section class="room" id="sala-9">
+    <header class="room-head">
+      <p class="room-no">Sala 9</p>
+      <h2>Color del año</h2>
+      <p class="room-meta">Hoy, 2026</p>
+    </header>
+    <div class="exhibit">
+      <figure class="frame">
+        <div class="art cd" data-act="fan" role="img" aria-label="Abanico de muestras de color en tonos rojos. La muestra central se llama Laura, código 26-0214, Rubor">
+          <div class="cd-head">
+            <p class="cd-kick">Carta de color · Edición 2026</p>
+            <p class="cd-title">Color del año</p>
+          </div>
+          <div class="fan" id="fan">
+            <div class="chip" style="--i:0;--c:#FBE1E4;z-index:7"><div class="nm"><b>Nervios</b><small>26-0101</small></div><div class="sw"></div></div>
+            <div class="chip" style="--i:6;--c:#5A0E26;z-index:7"><div class="nm"><b>Siempre</b><small>26-1231</small></div><div class="sw"></div></div>
+            <div class="chip" style="--i:1;--c:#F6BAC5;z-index:8"><div class="nm"><b>Mariposas</b><small>26-0305</small></div><div class="sw"></div></div>
+            <div class="chip" style="--i:5;--c:#92193A;z-index:8"><div class="nm"><b>Me encantas</b><small>26-0909</small></div><div class="sw"></div></div>
+            <div class="chip" style="--i:2;--c:#EE8A9A;z-index:9"><div class="nm"><b>Tarde contigo</b><small>26-0612</small></div><div class="sw"></div></div>
+            <div class="chip" style="--i:4;--c:#C22848;z-index:9"><div class="nm"><b>Latido</b><small>26-0720</small></div><div class="sw"></div></div>
+            <div class="chip laura" style="--i:3;--c:#E0405E;z-index:10"><div class="nm"><b>LAURA</b><small>26-0214 · Rubor</small></div><div class="sw"></div></div>
+            <span class="rivet"></span>
+          </div>
+        </div>
+      </figure>
+      <aside class="label">
+        <p class="lb-artist">A la manera de las cartas de color</p>
+        <p class="lb-life">Una tradición de cada diciembre desde 1999</p>
+        <p class="lb-title"><i>Laura 26-0214</i>, 2026</p>
+        <p class="lb-medium">Siete tonos de rojo, un remache y un nombre propio.</p>
+        <p class="lb-text">Cada año se elige un color para resumir el año que viene. Este año no hubo comité: es el color que se me pone la cara cuando pienso en ti. Fíjate en el código.</p>
+        <button class="act" data-act="fan">Cerrar el abanico</button>
+        <p class="lb-inv">Inv. L-009 · Préstamo permanente de mi corazón</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Tienda -->
+  <section class="room" id="tienda">
+    <header class="room-head">
+      <p class="room-no">Salida</p>
+      <h2>Tienda del museo</h2>
+      <p class="room-meta">Como en todos los museos, la salida es por la tienda de regalos. Aquí todo es gratis.</p>
+    </header>
+    <div class="products">
+      <article class="prod">
+        <div class="prod-img" aria-hidden="true"><div class="pp"><i></i><i></i><i></i><b>me encantas</b></div></div>
+        <h3>Póster «me encantas»</h3>
+        <p class="prod-desc">De la Sala 1. Edición limitada: existe uno.</p>
+        <p class="price">Gratis</p>
+        <button class="add" data-add="poster" aria-pressed="false">Añadir al carrito</button>
+      </article>
+      <article class="prod">
+        <div class="prod-img" aria-hidden="true"><div class="mug"></div></div>
+        <h3>Taza Memphis</h3>
+        <p class="prod-desc">Para el café de la mañana. Apta para lavavajillas y para días grises.</p>
+        <p class="price">Gratis</p>
+        <button class="add" data-add="taza" aria-pressed="false">Añadir al carrito</button>
+      </article>
+      <article class="prod">
+        <div class="prod-img" aria-hidden="true"><div class="cup-wrap"><i class="steam"></i><i class="steam"></i><i class="steam"></i><div class="cup"></div><div class="saucer"></div></div></div>
+        <h3>Un café conmigo</h3>
+        <p class="prod-desc">Incluye conversación y, con suerte, risas. Día y hora los eliges tú.</p>
+        <p class="price">Gratis</p>
+        <button class="add" data-add="cafe" aria-pressed="false">Añadir al carrito</button>
+      </article>
+      <article class="prod">
+        <div class="prod-img" aria-hidden="true"><div class="sold"><span>Agotado</span></div></div>
+        <h3>Olvidarte</h3>
+        <p class="prod-desc">No queda ninguno y no se espera reposición.</p>
+        <p class="price">—</p>
+        <button class="add" disabled>Agotado</button>
+      </article>
+    </div>
+    <div class="cart">
+      <p id="cartInfo">Tu carrito está vacío.</p>
+      <button class="btn" id="pay" disabled>Pagar · Total 0,00</button>
+    </div>
+    <div class="receipt-slot">
+      <div class="receipt" id="receipt" hidden>
+        <p class="rc-c"><b>MUSEO LAURA</b><br>Tienda del museo · Caja 1<br><span id="rcDate"></span><br>Recibo nº 000001</p>
+        <hr class="rc-hr">
+        <div id="rcItems"></div>
+        <hr class="rc-hr">
+        <p class="rc-row rc-total"><span>TOTAL</span><span>0,00</span></p>
+        <p class="rc-row"><span>Forma de pago</span><span>Una sonrisa</span></p>
+        <p class="rc-row"><span>Le atendió</span><span>Yo</span></p>
+        <hr class="rc-hr">
+        <p class="rc-note" id="rcNote"></p>
+        <hr class="rc-hr">
+        <p class="rc-c">Haz una captura de este recibo<br>y mándamela.</p>
+        <div class="rc-bar" aria-hidden="true"></div>
+        <p class="rc-c">¡Gracias por su visita!<br>Vuelva siempre.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p class="sign">Firmado: yo.</p>
+    <p>Ya sabes quién.</p>
+    <p>Museo Laura · Colección permanente · Abierto desde 2026. Todas las obras son homenajes a sus autores; lo único original aquí es lo que siento.</p>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const rng = seed => () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  const replay = el => { el.classList.remove('play'); void el.offsetWidth; el.classList.add('play'); };
+  const setAct = (name, text) => $$(`.act[data-act="${name}"]`).forEach(b => b.textContent = text);
+
+  /* ---------- Título: nota de secuestro con las tipografías de las salas ---------- */
+  const title = $('#title');
+  $$('.l1, .l2', title).forEach(line => {
+    const txt = line.textContent; line.textContent = '';
+    for (const c of txt) { const s = document.createElement('span'); s.className = 'ch'; s.textContent = c; line.appendChild(s); }
+  });
+  const chars = $$('.ch', title);
+  const STY = [
+    { f: 'Jost, sans-serif', w: 600, c: '#fff', bg: '#1F4E9E', k: .8 },
+    { f: 'Archivo, sans-serif', w: 800, c: '#E3000F', k: .8 },
+    { f: 'Anton, Impact, sans-serif', w: 400, c: '#F3E6CF', bg: '#E65A1E', k: .9 },
+    { f: 'Bangers, Impact, sans-serif', w: 400, c: '#111', bg: '#FFDA1A', k: .9 },
+    { f: '"Rammetto One", sans-serif', w: 400, c: '#23B8B0', k: .64 },
+    { f: 'Jost, sans-serif', w: 800, i: 1, c: '#fff', bg: '#E1251B', k: .78 },
+    { f: '"Comic Sans MS", "Comic Neue", cursive', w: 700, c: '#FFFF00', bg: '#000080', k: .82 },
+    { f: '-apple-system, BlinkMacSystemFont, "Hanken Grotesk", sans-serif', w: 700, c: '#FF6B9A', k: .78 },
+  ];
+  const style = (el, s) => {
+    if (!s) { el.removeAttribute('style'); return; }
+    Object.assign(el.style, {
+      fontFamily: s.f, fontWeight: s.w, fontStyle: s.i ? 'italic' : 'normal', color: s.c,
+      background: s.bg || 'transparent', fontSize: s.k + 'em', padding: s.bg ? '0 .05em' : '0',
+      rotate: ((Math.random() - .5) * 9).toFixed(1) + 'deg'
+    });
+  };
+  const pick = () => STY[Math.floor(Math.random() * STY.length)];
+  let shuffling = false;
+  function shuffle(dur) {
+    if (reduce || shuffling) return;
+    shuffling = true;
+    const t0 = performance.now();
+    chars.forEach((el, i) => el._end = t0 + dur * .5 + i * 60);
+    let last = 0;
+    (function frame(t) {
+      if (t - last > 85) {
+        last = t;
+        let alive = false;
+        chars.forEach(el => { if (t < el._end) { alive = true; style(el, pick()); } else style(el, null); });
+        if (!alive) { shuffling = false; return; }
+      }
+      requestAnimationFrame(frame);
+    })(t0);
+  }
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => setTimeout(() => shuffle(1500), 300));
+  title.addEventListener('click', () => shuffle(1100));
+  if (matchMedia('(hover: hover)').matches && !reduce) {
+    chars.forEach(el => el.addEventListener('mouseenter', () => {
+      if (shuffling) return;
+      style(el, pick()); clearTimeout(el._t); el._t = setTimeout(() => style(el, null), 650);
+    }));
+  }
+
+  /* ---------- Entrada ---------- */
+  const tear = $('#tear'), stub = $('#stub');
+  const goRoom1 = () => $('#sala-1').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+  tear.addEventListener('click', () => {
+    if (stub.classList.contains('torn')) { goRoom1(); return; }
+    stub.classList.add('torn'); $('#tMain').classList.add('stamped');
+    tear.textContent = 'Entrada validada · Ir a la Sala 1';
+    setTimeout(goRoom1, reduce ? 0 : 1300);
+  });
+
+  /* ---------- Sala 2 · arcos suizos ---------- */
+  {
+    const R = rng(1955), D = Math.PI / 180; let html = ''; let n = 0;
+    const pt = (r, a) => `${(400 + r * Math.cos(a * D)).toFixed(1)} ${(r * Math.sin(a * D)).toFixed(1)}`;
+    for (let r = 18; r <= 282; r += 12) {
+      let a = 90 + R() * 30;
+      const segs = R() < .4 ? 2 : 1;
+      for (let s = 0; s < segs && a < 172; s++) {
+        const b = Math.min(180, a + 16 + R() * 70);
+        const w = (1.4 + Math.pow(R(), 1.7) * 10).toFixed(1);
+        const red = (n++ === 13);
+        html += `<path d="M${pt(r, a)} A${r} ${r} 0 0 1 ${pt(r, b)}" stroke-width="${w}"${red ? ' stroke="#E3000F"' : ''}/>`;
+        a = b + 8 + R() * 30;
+      }
+    }
+    $('#swArcs').innerHTML = html;
+  }
+
+  /* ---------- Sala 3 · corazón recortado y letras temblorosas ---------- */
+  {
+    const R = rng(1959), pts = [], N = 30;
+    for (let i = 0; i < N; i++) {
+      const t = i / N * Math.PI * 2 + (R() - .5) * .08;
+      const x = 16 * Math.pow(Math.sin(t), 3);
+      const y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+      pts.push(`${(200 + x * 7.2 + (R() - .5) * 8).toFixed(1)},${(186 - y * 7.2 + (R() - .5) * 8).toFixed(1)}`);
+    }
+    $('#bsHeart').setAttribute('points', pts.join(' '));
+    let k = 0;
+    const jitter = el => {
+      const txt = el.textContent; el.textContent = '';
+      for (const c of txt) {
+        const s = document.createElement('span'); s.className = 'bs-ch'; s.textContent = c;
+        s.style.setProperty('--r', ((R() - .5) * 8).toFixed(1) + 'deg');
+        s.style.setProperty('--x', ((R() - .5) * .06).toFixed(3) + 'em');
+        s.style.setProperty('--y', ((R() - .5) * .08).toFixed(3) + 'em');
+        s.style.setProperty('--k', k++);
+        el.appendChild(s);
+      }
+    };
+    $$('#bsTitle .ln').forEach(jitter); jitter($('#bsName'));
+  }
+
+  /* ---------- Sala 4 · explosión ---------- */
+  {
+    const R = rng(1963), base = [], n = 13;
+    for (let i = 0; i < n * 2; i++) base.push({ a: i / (n * 2) * Math.PI * 2 - Math.PI / 2 + (R() - .5) * .14, r: (i % 2 ? 30 : 49) * (.86 + R() * .18) });
+    const poly = (arr, f) => 'polygon(' + arr.map(p => `${(50 + Math.cos(p.a) * p.r * f).toFixed(1)}% ${(50 + Math.sin(p.a) * p.r * f).toFixed(1)}%`).join(',') + ')';
+    const inner = []; const m = 11;
+    for (let i = 0; i < m * 2; i++) inner.push({ a: i / (m * 2) * Math.PI * 2 - Math.PI / 2 + .1 + (R() - .5) * .12, r: (i % 2 ? 26 : 39) * (.88 + R() * .16) });
+    $('#popB1').style.clipPath = poly(base, 1);
+    $('#popB2').style.clipPath = poly(base, .92);
+    $('#popB3').style.clipPath = poly(inner, 1);
+  }
+  const popWords = ['¡PUM!', '¡ZAS!', '¡BOOM!', '¡PLAF!', '¡AY!', '¡CHAN!'];
+  let popI = 0;
+
+  /* ---------- Sala 5 · piezas Memphis arrastrables ---------- */
+  const mp = $('#mpArt'); let z = 10;
+  $$('.mp-piece', mp).forEach(p => {
+    p.dataset.l = p.style.left; p.dataset.t = p.style.top;
+    p.addEventListener('pointerdown', e => {
+      e.preventDefault();
+      p.setPointerCapture(e.pointerId);
+      const box = mp.getBoundingClientRect(), sx = e.clientX, sy = e.clientY;
+      const l0 = parseFloat(p.style.left), t0 = parseFloat(p.style.top);
+      p.style.zIndex = ++z; p.classList.add('drag');
+      const move = ev => {
+        p.style.left = Math.max(-12, Math.min(96, l0 + (ev.clientX - sx) / box.width * 100)).toFixed(2) + '%';
+        p.style.top = Math.max(-10, Math.min(96, t0 + (ev.clientY - sy) / box.height * 100)).toFixed(2) + '%';
+      };
+      const up = () => { p.classList.remove('drag'); p.removeEventListener('pointermove', move); p.removeEventListener('pointerup', up); p.removeEventListener('pointercancel', up); };
+      p.addEventListener('pointermove', move); p.addEventListener('pointerup', up); p.addEventListener('pointercancel', up);
+    });
+  });
+
+  /* ---------- Sala 6 · fotografía de luces desenfocadas ---------- */
+  {
+    const c = $('#krCanvas'), W = 640, H = 800; c.width = W; c.height = H;
+    const x = c.getContext('2d'), R = rng(1987);
+    const g = x.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#2c2c2c'); g.addColorStop(1, '#0c0c0c');
+    x.fillStyle = g; x.fillRect(0, 0, W, H);
+    x.globalCompositeOperation = 'lighter';
+    for (let i = 0; i < 60; i++) {
+      const cx = R() * W, cy = R() * H * .85, r = 14 + Math.pow(R(), 2) * 120, a = .05 + R() * .22;
+      const rg = x.createRadialGradient(cx, cy, 0, cx, cy, r);
+      rg.addColorStop(0, `rgba(255,255,255,${(a * .65).toFixed(3)})`);
+      rg.addColorStop(.84, `rgba(255,255,255,${a.toFixed(3)})`);
+      rg.addColorStop(1, 'rgba(255,255,255,0)');
+      x.fillStyle = rg; x.beginPath(); x.arc(cx, cy, r, 0, Math.PI * 2); x.fill();
+    }
+    x.globalCompositeOperation = 'source-over';
+    const v = x.createRadialGradient(W / 2, H * .42, H * .18, W / 2, H * .5, H * .78);
+    v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,.65)');
+    x.fillStyle = v; x.fillRect(0, 0, W, H);
+    const d = x.getImageData(0, 0, W, H), p = d.data;
+    for (let i = 0; i < p.length; i += 4) {
+      const l = p[i] * .3 + p[i + 1] * .59 + p[i + 2] * .11 + (Math.random() - .5) * 40;
+      p[i] = p[i + 1] = p[i + 2] = l;
+    }
+    x.putImageData(d, 0, 0);
+  }
+  const krPhrases = ['Te pienso, luego existo', 'Tu sonrisa es mi campo de batalla', 'Tu mirada me golpea de lado', 'No necesito nada. Bueno, a ti'];
+  let krI = 0;
+
+  /* ---------- Sala 7 · estela y corazones ---------- */
+  const gc = $('#gcPage');
+  const gcCols = ['#FF4FA3', '#FFFF00', '#00FFFF', '#FF3131', '#7CFF4F'];
+  let lastSpark = 0;
+  gc.addEventListener('pointermove', e => {
+    if (reduce) return;
+    const now = performance.now(); if (now - lastSpark < 40) return; lastSpark = now;
+    const r = gc.getBoundingClientRect(), s = document.createElement('span');
+    s.className = 'gc-spark'; s.textContent = Math.random() < .5 ? '✦' : '♥︎';
+    s.style.left = (e.clientX - r.left) + 'px'; s.style.top = (e.clientY - r.top) + 'px';
+    s.style.color = gcCols[Math.floor(Math.random() * gcCols.length)];
+    s.addEventListener('animationend', () => s.remove()); gc.appendChild(s);
+  });
+  function hearts() {
+    for (let i = 0; i < 28; i++) {
+      const s = document.createElement('span'); s.className = 'gc-heart'; s.textContent = '♥︎';
+      s.style.left = (Math.random() * 94) + '%';
+      s.style.fontSize = (3 + Math.random() * 6).toFixed(1) + 'cqw';
+      s.style.color = gcCols[i % gcCols.length];
+      s.style.animationDuration = (1.8 + Math.random() * 1.6).toFixed(2) + 's';
+      s.style.animationDelay = (Math.random() * 1.2).toFixed(2) + 's';
+      s.addEventListener('animationend', () => s.remove()); gc.appendChild(s);
+    }
+  }
+
+  /* ---------- Acciones de cada obra ---------- */
+  const fan = $('#fan');
+  const actions = {
+    bauhaus() {
+      $$('.bh-s').forEach(g => {
+        const tx = ((Math.random() - .5) * 120).toFixed(0), ty = ((Math.random() - .5) * 90).toFixed(0);
+        const rot = [0, 45, 90, -30, 180, 15][Math.floor(Math.random() * 6)];
+        g.style.transform = `translate(${tx}px, ${ty}px) rotate(${rot}deg)`;
+      });
+    },
+    swiss() { const on = $('#swArt').classList.toggle('show-grid'); setAct('swiss', on ? 'Ocultar retícula' : 'Mostrar retícula'); },
+    bass() { replay($('#bsArt')); },
+    pop() {
+      const w = $('#popWord'); popI = (popI + 1) % popWords.length; w.textContent = popWords[popI];
+      w.classList.remove('boom'); void w.offsetWidth; w.classList.add('boom');
+    },
+    memphis() { $$('.mp-piece', mp).forEach(p => { p.style.left = p.dataset.l; p.style.top = p.dataset.t; }); },
+    kruger() {
+      const s = $('#krPhrase'); krI = (krI + 1) % krPhrases.length; s.textContent = krPhrases[krI];
+      s.classList.remove('flash'); void s.offsetWidth; s.classList.add('flash');
+    },
+    geo() { hearts(); },
+    keynote() { replay($('#knArt')); },
+    fan() { const closed = fan.classList.toggle('closed'); setAct('fan', closed ? 'Abrir el abanico' : 'Cerrar el abanico'); }
+  };
+  $$('[data-act]').forEach(el => el.addEventListener('click', e => {
+    if (el.classList.contains('art') && e.target.closest('button')) return;
+    e.stopPropagation();
+    actions[el.dataset.act]?.();
+  }));
+
+  /* ---------- Tienda ---------- */
+  const cart = new Set();
+  const names = { poster: 'Póster «me encantas»', taza: 'Taza Memphis', cafe: 'Un café conmigo' };
+  const cartInfo = $('#cartInfo'), pay = $('#pay'), receipt = $('#receipt');
+  $$('[data-add]').forEach(b => b.addEventListener('click', () => {
+    const id = b.dataset.add, has = cart.has(id);
+    has ? cart.delete(id) : cart.add(id);
+    b.setAttribute('aria-pressed', String(!has));
+    b.textContent = has ? 'Añadir al carrito' : 'En el carrito ✓';
+    const n = cart.size;
+    cartInfo.textContent = n ? `${n} ${n === 1 ? 'artículo' : 'artículos'} en el carrito · Total: 0,00` : 'Tu carrito está vacío.';
+    pay.disabled = !n;
+  }));
+  pay.addEventListener('click', () => {
+    $('#rcDate').textContent = new Date().toLocaleString('es', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+    const items = $('#rcItems'); items.textContent = '';
+    ['poster', 'taza', 'cafe'].filter(id => cart.has(id)).forEach(id => {
+      const p = document.createElement('p'); p.className = 'rc-row';
+      const a = document.createElement('span'); a.textContent = '1 × ' + names[id];
+      const b = document.createElement('span'); b.textContent = '0,00';
+      p.append(a, b); items.appendChild(p);
+    });
+    $('#rcNote').textContent = cart.has('cafe')
+      ? 'Café conmigo: reservado. Solo falta el día, y ese lo eliges tú.'
+      : 'Todavía puedes llevarte un café conmigo. Pregunta en caja.';
+    receipt.hidden = false;
+    receipt.classList.remove('printing'); void receipt.offsetWidth; receipt.classList.add('printing');
+    pay.textContent = 'Imprimir otro recibo';
+    setTimeout(() => receipt.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }), 150);
+  });
+})();
+</script>
+
+</body>
+</html>
